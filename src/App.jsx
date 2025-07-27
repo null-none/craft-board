@@ -1,7 +1,6 @@
 import React from "react";
 import { Editor, Frame, Element } from "@craftjs/core";
 import { Toolbox } from "./components/Toolbox";
-import { SettingsPanel } from "./components/SettingsPanel";
 import { ExportJsonButton } from "./components/ExportJsonButton";
 import { ImageByUrlElement } from "./elements/ImageByUrl";
 import { ButtonElement } from "./elements/Button";
@@ -27,7 +26,6 @@ export default function App() {
           </Col>
           <Col md={4}>
             <Toolbox />
-            <SettingsPanel />
             <ExportJsonButton />
           </Col>
         </Editor>

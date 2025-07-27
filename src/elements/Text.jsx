@@ -20,7 +20,9 @@ export const TextElement = ({ text }) => {
           autoFocus
           onBlur={() => setEditing(false)}
           onChange={(e) =>
-            actions.setProp(id, (props) => (props.text = e.target.value))
+            actions.setProp((props) => {
+              props.text = e.target.value;
+            })
           }
         />
       ) : (

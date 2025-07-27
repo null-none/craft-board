@@ -21,7 +21,9 @@ export const ImageByUrlElement = ({ src }) => {
           autoFocus
           onBlur={() => setEditing(false)}
           onChange={(e) =>
-            actions.setProp(id, (props) => (props.src = e.target.value))
+            actions.setProp((props) => {
+              props.src = e.target.value;
+            })
           }
         />
       ) : (

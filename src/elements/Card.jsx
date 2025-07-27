@@ -25,15 +25,20 @@ export const CardElement = ({
           <input
             className="form-control mb-2"
             value={title}
+            onBlur={() => setEditing(false)}
             onChange={(e) =>
-              actions.setProp(id, (props) => (props.title = e.target.value))
+              actions.setProp((props) => {
+                props.title = e.target.value;
+              })
             }
           />
           <textarea
             className="form-control"
             value={body}
             onChange={(e) =>
-              actions.setProp(id, (props) => (props.body = e.target.value))
+              actions.setProp((props) => {
+                props.body = e.target.value;
+              })
             }
             onBlur={() => setEditing(false)}
           />

@@ -1,10 +1,12 @@
 import React from "react";
 import { useEditor } from "@craftjs/core";
 import ListGroup from "react-bootstrap/ListGroup";
-import { ImageByUrlElement } from "../elements/ImageByUrl";
-import { ButtonElement } from "../elements/Button";
-import { CardElement } from "../elements/Card";
-import { TextElement } from "../elements/Text";
+import { ImageByUrl6Element } from "../elements/ImageByUrl6";
+import { Button6Element } from "../elements/Button6";
+import { Card6Element } from "../elements/Card6";
+import { Card12Element } from "../elements/Card12";
+import { Text6Element } from "../elements/Text6";
+import { Text12Element } from "../elements/Text12";
 
 export const Toolbox = () => {
   const { connectors } = useEditor();
@@ -12,34 +14,50 @@ export const Toolbox = () => {
     <ListGroup>
       <ListGroup.Item>
         <div
-          ref={(ref) => connectors.create(ref, <TextElement text="Text" />)}
+          ref={(ref) => connectors.create(ref, <Text6Element text="Text" />)}
           className="btn btn-light mb-2 w-100"
         >
-          Text Element
+          Text Element [6 columns]
         </div>
       </ListGroup.Item>
       <ListGroup.Item>
         <div
-          ref={(ref) => connectors.create(ref, <ButtonElement text="Button" />)}
+          ref={(ref) => connectors.create(ref, <Text12Element text="Text" />)}
           className="btn btn-light mb-2 w-100"
         >
-          Button Element
+          Text Element [12 columns]
         </div>
       </ListGroup.Item>
       <ListGroup.Item>
         <div
-          ref={(ref) => connectors.create(ref, <CardElement />)}
+          ref={(ref) => connectors.create(ref, <Button6Element text="Button" />)}
           className="btn btn-light mb-2 w-100"
         >
-          Card Element
+          Button Element [6 columns]
         </div>
       </ListGroup.Item>
       <ListGroup.Item>
         <div
-          ref={(ref) => connectors.create(ref, <ImageByUrlElement />)}
+          ref={(ref) => connectors.create(ref, <Card6Element />)}
           className="btn btn-light mb-2 w-100"
         >
-          Image Element
+          Card Element [6 columns]
+        </div>
+      </ListGroup.Item>
+        <ListGroup.Item>
+        <div
+          ref={(ref) => connectors.create(ref, <Card12Element />)}
+          className="btn btn-light mb-2 w-100"
+        >
+          Card Element [12 columns]
+        </div>
+      </ListGroup.Item>
+      <ListGroup.Item>
+        <div
+          ref={(ref) => connectors.create(ref, <ImageByUrl6Element />)}
+          className="btn btn-light mb-2 w-100"
+        >
+          Image Element [6 columns]
         </div>
       </ListGroup.Item>
     </ListGroup>

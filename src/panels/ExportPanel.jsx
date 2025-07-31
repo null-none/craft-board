@@ -1,7 +1,7 @@
 import React from "react";
 import { useEditor } from "@craftjs/core";
 
-export const ExportJsonButton = () => {
+export const ExportPanel = () => {
   const { query } = useEditor();
 
   const handleExport = () => {
@@ -12,6 +12,6 @@ export const ExportJsonButton = () => {
   };
 
   return (
-    <button onClick={handleExport} className="btn btn-dark mt-3 w-100">JSON Result</button>
+    <button onClick={handleExport} className="btn btn-link text-decoration-none">Export</button>
   );
 };

@@ -31,9 +31,9 @@ export default function App() {
         }}
       >
         <>
-          <Row>
+          <Row className="border-bottom mb-3">
             <Col>
-              <div class="d-flex flex-row bd-highlight mb-3">
+              <div class="d-flex flex-row bd-highlight mb-3  justify-content-center">
                 <div class="p-2 bd-highlight">
                   <UndoRedoPanel />
                 </div>
@@ -44,11 +44,10 @@ export default function App() {
             </Col>
           </Row>
           <Row>
-            <Col md={2} className="bg-light vh-100 p-3">
+            <Col md={2} className="vh-100 p-3">
               <ToolboxPanel />
-              <SettingsPanel />
             </Col>
-            <Col md={10} className="p-4">
+            <Col md={8} className="p-4">
               <Frame>
                 <div class="row">
                   <Element is="div" canvas class="row">
@@ -62,6 +61,9 @@ export default function App() {
                   </Element>
                 </div>
               </Frame>
+            </Col>
+            <Col md={2} className="bg-light vh-100 p-3">
+              <SettingsPanel />
             </Col>
           </Row>
         </>

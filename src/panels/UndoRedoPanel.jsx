@@ -12,17 +12,21 @@ export const UndoRedoPanel = () => {
   return (
     <div className="d-flex gap-2 mb-2">
       <button
-        className="btn btn-link text-decoration-none"
+        className="btn btn-outline-dark"
         disabled={!canUndo}
         onClick={() => actions.history.undo()}
       >
-        Undo
+        {" "}
+        <i class="bi bi-arrow-counterclockwise"></i> Undo
       </button>
       <button
-        className="btn btn-link text-decoration-none"
+        className="btn btn-outline-dark"
         disabled={!canRedo}
         onClick={() => actions.history.redo()}
-      > Redo</button>
+      >
+        {" "}
+        <i class="bi bi-arrow-clockwise"></i> Redo
+      </button>
     </div>
   );
 };

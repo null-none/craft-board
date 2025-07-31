@@ -7,11 +7,13 @@ export const ExportPanel = () => {
   const handleExport = () => {
     const json = query.serialize();
     navigator.clipboard.writeText(json).then(() => {
-      alert("JSON copied to clipboard!");
+      console.log("JSON copied to clipboard!");
     });
   };
 
   return (
-    <button onClick={handleExport} className="btn btn-link text-decoration-none">Export</button>
+    <button onClick={handleExport} className="btn btn-outline-dark">
+      <i class="bi bi-download"></i> Export
+    </button>
   );
 };

@@ -8,7 +8,6 @@ import { UndoRedoPanel } from "./panels/UndoRedoPanel";
 import { SettingsPanel } from "./panels/SettingsPanel";
 import { ImageByUrl6Element } from "./elements/ImageByUrl6";
 import { ImageByUrl12Element } from "./elements/ImageByUrl12";
-import { Button6Element } from "./elements/Button6";
 import { Card6Element } from "./elements/Card6";
 import { Card12Element } from "./elements/Card12";
 import { Text6Element } from "./elements/Text6";
@@ -22,7 +21,6 @@ export default function App() {
       <Editor
         resolver={{
           Text6Element,
-          Button6Element,
           Card6Element,
           Card12Element,
           ImageByUrl6Element,
@@ -44,7 +42,7 @@ export default function App() {
             </Col>
           </Row>
           <Row>
-            <Col md={2} className="vh-100 p-3">
+            <Col md={2} className="vh-100 p-3 border-end">
               <ToolboxPanel />
             </Col>
             <Col md={8} className="p-4">
@@ -62,7 +60,7 @@ export default function App() {
                 </div>
               </Frame>
             </Col>
-            <Col md={2} className="bg-light vh-100 p-3">
+            <Col md={2} className="vh-100 p-3 border-start">
               <SettingsPanel />
             </Col>
           </Row>

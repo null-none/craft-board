@@ -26,7 +26,7 @@ export const SettingsPanel = () => {
     <Card className="p-2 mt-3">
       <Card.Body>
         <Card.Title>Customize</Card.Title>
-        <button className="btn btn-danger mt-3 w-100" onClick={handleDelete}>
+        <button className="btn btn-outline-danger mt-3 w-100" onClick={handleDelete}>
           Delete Element
         </button>
       </Card.Body>

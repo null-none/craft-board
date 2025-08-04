@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNode } from "@craftjs/core";
 import Col from "react-bootstrap/Col";
 
+import ParagraphElement from "./Paragraph";
+
 export const Card12Element = ({
   title = "Headline",
   body = "This is a sample card body.",
@@ -48,7 +50,7 @@ export const Card12Element = ({
         ) : (
           <>
             <h5 className="card-title">{title}</h5>
-            <p className="card-text">{body}</p>
+            <ParagraphElement text={body} className="card-text" />
           </>
         )}
       </div>

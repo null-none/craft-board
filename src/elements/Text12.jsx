@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNode } from "@craftjs/core";
 
 import Col from "react-bootstrap/Col";
+import ParagraphElement from "./Paragraph";
 
 export const Text12Element = ({ text }) => {
   const {
@@ -29,7 +30,7 @@ export const Text12Element = ({ text }) => {
             }
           />
         ) : (
-          <p>{text}</p>
+          <ParagraphElement text={text} />
         )}
       </div>
     </Col>

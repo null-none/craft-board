@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNode } from "@craftjs/core";
 
 import Col from "react-bootstrap/Col";
+import ParagraphElement from "./Paragraph";
 
 export const Text6Element = ({ text }) => {
   const {
@@ -17,7 +18,7 @@ export const Text6Element = ({ text }) => {
     <Col md={6}>
       <div ref={(ref) => connect(drag(ref))} onClick={() => setEditing(true)}>
         {editing ? (
-          <input
+          <textarea
             className="form-control"
             value={text}
             autoFocus
@@ -29,7 +30,7 @@ export const Text6Element = ({ text }) => {
             }
           />
         ) : (
-          <p>{text}</p>
+          <ParagraphElement text={text} />
         )}
       </div>
     </Col>

@@ -15,7 +15,7 @@ export const ImageByUrl12Element = ({ src }) => {
 
   return (
     <Col md={12}>
-      <div ref={(ref) => connect(drag(ref))} onClick={() => setEditing(true)}>
+      <div ref={(ref) => connect(drag(ref))} onClick={() => setEditing(true)} className="p-3 m-1">
         {editing ? (
           <input
             className="form-control"

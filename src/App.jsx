@@ -12,6 +12,8 @@ import { Card6Element } from "./elements/Card6";
 import { Card12Element } from "./elements/Card12";
 import { Text6Element } from "./elements/Text6";
 import { Text12Element } from "./elements/Text12";
+import { Headline6Element } from "./elements/Headline6"; 
+import { Headline12Element } from "./elements/Headline12"; 
 
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -26,16 +28,18 @@ export default function App() {
           ImageByUrl6Element,
           ImageByUrl12Element,
           Text12Element,
+          Headline6Element,
+          Headline12Element
         }}
       >
         <>
           <Row className="border-bottom mb-3">
             <Col>
-              <div class="d-flex flex-row bd-highlight mb-3  justify-content-center">
-                <div class="p-2 bd-highlight">
+              <div className="d-flex flex-row bd-highlight mb-3  justify-content-center">
+                <div className="p-2 bd-highlight">
                   <UndoRedoPanel />
                 </div>
-                <div class="p-2 bd-highlight">
+                <div className="p-2 bd-highlight">
                   <ExportPanel />
                 </div>
               </div>
@@ -47,15 +51,15 @@ export default function App() {
             </Col>
             <Col md={8} className="p-4">
               <Frame>
-                <div class="row">
-                  <Element is="div" canvas class="row">
-                    <Text6Element text="Example text" />
+                <div className="row">
+                  <Element is="div" canvas className="row">
+                    <Headline6Element text="Example text" body="This is a sample text." />
                     <ImageByUrl6Element url="https://via.placeholder.com/150" />
                     <Card6Element />
                     <Card6Element />
                     <Card6Element />
                     <Card6Element />
-                    <Text12Element text="Example text" />
+                    <Headline12Element />
                   </Element>
                 </div>
               </Frame>

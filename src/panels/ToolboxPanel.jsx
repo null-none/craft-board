@@ -6,36 +6,56 @@ import { Card6Element } from "../elements/Card6";
 import { Card12Element } from "../elements/Card12";
 import { Text6Element } from "../elements/Text6";
 import { Text12Element } from "../elements/Text12";
+import { Headline6Element } from "../elements/Headline6";
+import { Headline12Element } from "../elements/Headline12";
 
 export const ToolboxPanel = () => {
   const { connectors } = useEditor();
   return (
-    <div class="row row-cols-2">
+    <div className="row row-cols-2">
+      <div
+        ref={(ref) => connectors.create(ref, <Headline6Element  />)}
+        className="col"
+      >
+        <div className="border border-dark rounded m-1 p-2 w-100 text-center user-select-none">
+          <i className="bi bi-card-heading pe-2"></i>{" "}
+          <small className="border-start border-dark ps-3">50%</small>
+        </div>
+      </div>
+      <div
+        ref={(ref) => connectors.create(ref, <Headline12Element />)}
+        className="col"
+      >
+        <div className="border border-dark rounded m-1 p-2 w-100 text-center user-select-none">
+          <i className="bi bi-card-heading pe-2"></i>{" "}
+          <small className="border-start border-dark ps-3">100%</small>
+        </div>
+      </div>
       <div
         ref={(ref) => connectors.create(ref, <Text6Element text="Text" />)}
         className="col"
       >
-        <div class="border border-dark rounded m-1 p-2 w-100 text-center user-select-none">
-          <i class="bi bi-fonts pe-2"></i>{" "}
-          <small class="border-start border-dark ps-3">50%</small>
+        <div className="border border-dark rounded m-1 p-2 w-100 text-center user-select-none">
+          <i className="bi bi-fonts pe-2"></i>{" "}
+          <small className="border-start border-dark ps-3">50%</small>
         </div>
       </div>
       <div
         ref={(ref) => connectors.create(ref, <Text12Element text="Text" />)}
         className="col"
       >
-        <div class="border border-dark rounded m-1 p-2 w-100 text-center user-select-none">
-          <i class="bi bi-fonts pe-2"></i>{" "}
-          <small class="border-start border-dark ps-3">100%</small>
+        <div className="border border-dark rounded m-1 p-2 w-100 text-center user-select-none">
+          <i className="bi bi-fonts pe-2"></i>{" "}
+          <small className="border-start border-dark ps-3">100%</small>
         </div>
       </div>
       <div
         ref={(ref) => connectors.create(ref, <Card6Element />)}
         className="col"
       >
-        <div class="border border-dark rounded m-1 p-2 w-100 text-center user-select-none">
-          <i class="bi bi-card-list pe-2"></i>{" "}
-          <small class="border-start border-dark ps-3">50%</small>
+        <div className="border border-dark rounded m-1 p-2 w-100 text-center user-select-none">
+          <i className="bi-postcard-heart pe-2"></i>{" "}
+          <small className="border-start border-dark ps-3">50%</small>
         </div>
       </div>
 
@@ -43,27 +63,27 @@ export const ToolboxPanel = () => {
         ref={(ref) => connectors.create(ref, <Card12Element />)}
         className="col"
       >
-        <div class="border border-dark rounded m-1 p-2 w-100 text-center user-select-none">
-          <i class="bi bi-card-list pe-2"></i>{" "}
-          <small class="border-start border-dark ps-3">100%</small>
+        <div className="border border-dark rounded m-1 p-2 w-100 text-center user-select-none">
+          <i className="bi-question-square pe-2"></i>{" "}
+          <small className="border-start border-dark ps-3">100%</small>
         </div>
       </div>
       <div
         ref={(ref) => connectors.create(ref, <ImageByUrl6Element />)}
         className="col"
       >
-        <div class="border border-dark rounded m-1 p-2 w-100 text-center user-select-none">
-          <i class="bi bi-card-image pe-2"></i>{" "}
-          <small class="border-start border-dark ps-3">50%</small>
+        <div className="border border-dark rounded m-1 p-2 w-100 text-center user-select-none">
+          <i className="bi bi-card-image pe-2"></i>{" "}
+          <small className="border-start border-dark ps-3">50%</small>
         </div>
       </div>
           <div
         ref={(ref) => connectors.create(ref, <ImageByUrl12Element />)}
         className="col"
       >
-        <div class="border border-dark rounded m-1 p-2 w-100 text-center user-select-none">
-          <i class="bi bi-card-image pe-2"></i>{" "}
-          <small class="border-start border-dark ps-3">100%</small>
+        <div className="border border-dark rounded m-1 p-2 w-100 text-center user-select-none">
+          <i className="bi bi-card-image pe-2"></i>{" "}
+          <small className="border-start border-dark ps-3">100%</small>
         </div>
       </div>
     </div>

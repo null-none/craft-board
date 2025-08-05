@@ -17,7 +17,7 @@ export const UndoRedoPanel = () => {
         onClick={() => actions.history.undo()}
       >
         {" "}
-        <i class="bi bi-arrow-counterclockwise"></i> Undo
+        <i className="bi bi-arrow-counterclockwise"></i> Undo
       </button>
       <button
         className="btn btn-outline-dark"
@@ -25,7 +25,7 @@ export const UndoRedoPanel = () => {
         onClick={() => actions.history.redo()}
       >
         {" "}
-        <i class="bi bi-arrow-clockwise"></i> Redo
+        <i className="bi bi-arrow-clockwise"></i> Redo
       </button>
     </div>
   );

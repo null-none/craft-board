@@ -4,9 +4,9 @@ import Col from "react-bootstrap/Col";
 
 import ParagraphElement from "./Paragraph";
 
-export const Card12Element = ({
+export const Headline12Element = ({
   title = "Headline",
-  body = "This is a sample card body.",
+  body = "This is a sample text.",
 }) => {
   const {
     connectors: { connect, drag },
@@ -29,7 +29,7 @@ export const Card12Element = ({
     <Col md={12}>
       <div
         ref={(ref) => connect(drag(ref))}
-        className="card p-3 m-1"
+        className="p-3 m-1"
         onClick={() => setEditing(true)}
       >
         {editing ? (
@@ -68,9 +68,9 @@ export const Card12Element = ({
     </Col>
   );
 };
-Card12Element.craft = {
+Headline12Element.craft = {
   props: {
-    title: "Heqadline",
-    body: "This is a sample card body.",
+    title: "Headline",
+    body: "This is a sample text.",
   },
 };

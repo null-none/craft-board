@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 
 import ParagraphElement from "./Paragraph";
 
-export const Card12Element = ({
+export const Faq12Element = ({
   title = "Headline",
   body = "This is a sample card body.",
 }) => {
@@ -47,7 +47,6 @@ export const Card12Element = ({
             <textarea
               className="form-control"
               value={body}
-              autoFocus
               ref={ref}
               onBlur={() => setEditing(false)}
               style={{ overflow: "hidden", resize: "none" }}
@@ -68,7 +67,7 @@ export const Card12Element = ({
     </Col>
   );
 };
-Card12Element.craft = {
+Faq12Element.craft = {
   props: {
     title: "Heqadline",
     body: "This is a sample card body.",

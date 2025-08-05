@@ -29,7 +29,6 @@ export const Text6Element = ({ text }) => {
           <textarea
             className="form-control"
             value={text}
-            autoFocus
             ref={ref}
             onBlur={() => setEditing(false)}
             style={{ overflow: "hidden", resize: "none" }}

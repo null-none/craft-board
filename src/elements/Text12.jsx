@@ -24,13 +24,16 @@ export const Text12Element = ({ text }) => {
   }, [text]);
 
   return (
-    <Col md={12}>
-      <div ref={(ref) => connect(drag(ref))} onClick={() => setEditing(true)} className="p-3 m-1">
+    <Col md={12} className="text-center">
+      <div
+        ref={(ref) => connect(drag(ref))}
+        onClick={() => setEditing(true)}
+        className="p-3 m-1"
+      >
         {editing ? (
-          <input
+          <textarea
             className="form-control"
             value={text}
-            autoFocus
             ref={ref}
             onBlur={() => setEditing(false)}
             style={{ overflow: "hidden", resize: "none" }}

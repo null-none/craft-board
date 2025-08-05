@@ -26,7 +26,7 @@ export const Headline12Element = ({
   }, [body]);
 
   return (
-    <Col md={12}>
+    <Col md={12} className="text-center">
       <div
         ref={(ref) => connect(drag(ref))}
         className="p-3 m-1"
@@ -47,7 +47,6 @@ export const Headline12Element = ({
             <textarea
               className="form-control"
               value={body}
-              autoFocus
               ref={ref}
               onBlur={() => setEditing(false)}
               style={{ overflow: "hidden", resize: "none" }}

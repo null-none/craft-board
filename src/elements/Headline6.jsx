@@ -47,7 +47,6 @@ export const Headline6Element = ({
             <textarea
               className="form-control"
               value={body}
-              autoFocus
               ref={ref}
               onBlur={() => setEditing(false)}
               style={{ overflow: "hidden", resize: "none" }}

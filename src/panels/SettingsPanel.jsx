@@ -1,6 +1,6 @@
 import React from "react";
 import { useEditor } from "@craftjs/core";
-import Card from "react-bootstrap/Card";
+import Accordion from "react-bootstrap/Accordion";
 
 export const SettingsPanel = () => {
   const { selected, actions, query } = useEditor((state) => {
@@ -23,13 +23,20 @@ export const SettingsPanel = () => {
   };
 
   return (
-    <Card className="p-2 mt-3">
-      <Card.Body>
-        <Card.Title>Customize</Card.Title>
-        <button className="btn btn-outline-danger mt-3 w-100" onClick={handleDelete}>
-          Delete Element
-        </button>
-      </Card.Body>
-    </Card>
+    <div className="pt-5">
+      <Accordion defaultActiveKey={["0"]} alwaysOpen>
+        <Accordion.Item eventKey="0">
+          <Accordion.Header>Customize</Accordion.Header>
+          <Accordion.Body>
+            <button
+              className="btn btn-outline-danger mt-3 w-100"
+              onClick={handleDelete}
+            >
+              Delete Element
+            </button>
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
+    </div>
   );
 };

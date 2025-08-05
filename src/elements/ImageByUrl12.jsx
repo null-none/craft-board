@@ -14,13 +14,12 @@ export const ImageByUrl12Element = ({ src }) => {
   const [editing, setEditing] = useState(false);
 
   return (
-    <Col md={12}>
+    <Col md={12} className="text-center">
       <div ref={(ref) => connect(drag(ref))} onClick={() => setEditing(true)} className="p-3 m-1">
         {editing ? (
           <input
             className="form-control"
             value={src}
-            autoFocus
             onBlur={() => setEditing(false)}
             onChange={(e) =>
               actions.setProp((props) => {
@@ -29,7 +28,7 @@ export const ImageByUrl12Element = ({ src }) => {
             }
           />
         ) : (
-          <img src={src} alt="User image" className="img-fluid" />
+          <img src={src} className="img-fluid" />
         )}
       </div>
     </Col>

@@ -13,7 +13,8 @@ export const ExportPanel = () => {
 
   return (
     <button onClick={handleExport} className="btn btn-outline-dark">
-      <i className="bi bi-download"></i> Export
+      <i className="bi bi-arrow-clockwise pe-2"></i>{" "}
+      <i className="border-start border-dark ps-3"></i> Export
     </button>
   );
 };

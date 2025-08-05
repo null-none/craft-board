@@ -20,7 +20,6 @@ export const ImageByUrl6Element = ({ src }) => {
           <input
             className="form-control"
             value={src}
-            autoFocus
             onBlur={() => setEditing(false)}
             onChange={(e) =>
               actions.setProp((props) => {

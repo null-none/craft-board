@@ -16,16 +16,16 @@ export const UndoRedoPanel = () => {
         disabled={!canUndo}
         onClick={() => actions.history.undo()}
       >
-        {" "}
-        <i className="bi bi-arrow-counterclockwise"></i> Undo
+        <i className="bi bi-arrow-counterclockwise pe-2"></i>{" "}
+        <i className="border-start border-dark ps-3"></i> Undo
       </button>
       <button
-        className="btn btn-outline-dark"
+        className="btn btn-outline-darkk"
         disabled={!canRedo}
         onClick={() => actions.history.redo()}
       >
-        {" "}
-        <i className="bi bi-arrow-clockwise"></i> Redo
+        <i className="bi bi-arrow-clockwise pe-2"></i>{" "}
+        <i className="border-start border-dark ps-3"></i> Redo
       </button>
     </div>
   );

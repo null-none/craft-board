@@ -7,6 +7,7 @@ import ParagraphElement from "./Paragraph";
 export const Card6Element = ({
   title = "Headline",
   body = "This is a sample card body.",
+  button = "",
 }) => {
   const {
     connectors: { connect, drag },
@@ -34,14 +35,7 @@ export const Card6Element = ({
       >
         {editing ? (
           <div className="row align-items-center justify-content-center">
-            <div className="col-md-5 text-center align-self-center">
-              <img
-                src="https://placehold.co/600x400/EEE/31343C"
-                alt="Placeholder"
-                className="img-fluid mb-2"
-              />
-            </div>
-            <div className="col-md-7 text-center text-md-start">
+            <div className="col-md-12 m-1">
               <input
                 className="form-control mb-2"
                 value={title}
@@ -52,10 +46,18 @@ export const Card6Element = ({
                   })
                 }
               />
+            </div>
+            <div className="col-md-5 text-center align-self-center">
+              <img
+                src="https://placehold.co/600x400/EEE/31343C"
+                alt="Placeholder"
+                className="img-fluid mb-2"
+              />
+            </div>
+            <div className="col-md-7 text-center text-md-start">
               <textarea
-                className="form-control"
+                className="form-control mb-2"
                 value={body}
-                autoFocus
                 ref={ref}
                 onBlur={() => setEditing(false)}
                 style={{ overflow: "hidden", resize: "none" }}
@@ -65,10 +67,23 @@ export const Card6Element = ({
                   })
                 }
               />
+              <input
+                className="form-control mb-2"
+                value={button}
+                onBlur={() => setEditing(false)}
+                onChange={(e) =>
+                  actions.setProp((props) => {
+                    props.button = e.target.value;
+                  })
+                }
+              />
             </div>
           </div>
         ) : (
           <div className="row align-items-center justify-content-center">
+            <div className="col-md-12">
+              <h5 className="card-title">{title}</h5>
+            </div>
             <div className="col-md-5 text-center align-self-center">
               <img
                 src="https://placehold.co/600x400/EEE/31343C"
@@ -77,8 +92,8 @@ export const Card6Element = ({
               />
             </div>
             <div className="col-md-7 text-center text-md-start">
-              <h5 className="card-title">{title}</h5>
               <ParagraphElement text={body} className="card-text" />
+              <button className="btn btn-primary mt-2">{button}</button>
             </div>
           </div>
         )}
@@ -90,5 +105,6 @@ Card6Element.craft = {
   props: {
     title: "Heqadline",
     body: "This is a sample card body.",
+    button: "",
   },
 };

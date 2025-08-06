@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useNode } from "@craftjs/core";
-import Col from "react-bootstrap/Col";
+import { Col, Button } from "react-bootstrap";
 
 import ParagraphElement from "./Paragraph";
 
@@ -25,12 +25,14 @@ export const Headline6Element = ({
     }
   }, [body]);
 
+  console.log(editing);
+
   return (
     <Col md={6}>
       <div
-        onBlur={() => setEditing(false)}
+        ref={(ref) => connect(drag(ref))}
         className="p-3 m-1"
-        onClick={() => setEditing(true)}
+        onClick={() => !editing && setEditing(true)}
       >
         {editing ? (
           <div>
@@ -47,6 +49,7 @@ export const Headline6Element = ({
               className="form-control"
               value={body}
               ref={ref}
+              rows="10"
               style={{ overflow: "hidden", resize: "none" }}
               onChange={(e) =>
                 actions.setProp((props) => {
@@ -54,6 +57,9 @@ export const Headline6Element = ({
                 })
               }
             />
+            <div className="d-grid gap-2">
+              <Button variant="outline-primary" onClick={() => setEditing(false)}>Save</Button>
+            </div>
           </div>
         ) : (
           <>

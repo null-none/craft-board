@@ -1,13 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useNode } from "@craftjs/core";
-import Col from "react-bootstrap/Col";
+import { Col, Button } from "react-bootstrap";
 
 import ParagraphElement from "./Paragraph";
 
 export const Card6Element = ({
   title = "Headline",
   body = "This is a sample card body.",
-  button = "",
+  button = "Click Me",
 }) => {
   const {
     connectors: { connect, drag },
@@ -31,7 +31,7 @@ export const Card6Element = ({
       <div
         ref={(ref) => connect(drag(ref))}
         className="card p-3 m-1"
-        onClick={() => setEditing(true)}
+        onClick={() => !editing && setEditing(true)}
       >
         {editing ? (
           <div className="row align-items-center justify-content-center">
@@ -39,7 +39,6 @@ export const Card6Element = ({
               <input
                 className="form-control mb-2"
                 value={title}
-                onBlur={() => setEditing(false)}
                 onChange={(e) =>
                   actions.setProp((props) => {
                     props.title = e.target.value;
@@ -59,7 +58,7 @@ export const Card6Element = ({
                 className="form-control mb-2"
                 value={body}
                 ref={ref}
-                onBlur={() => setEditing(false)}
+                rows="5"
                 style={{ overflow: "hidden", resize: "none" }}
                 onChange={(e) =>
                   actions.setProp((props) => {
@@ -70,13 +69,15 @@ export const Card6Element = ({
               <input
                 className="form-control mb-2"
                 value={button}
-                onBlur={() => setEditing(false)}
                 onChange={(e) =>
                   actions.setProp((props) => {
                     props.button = e.target.value;
                   })
                 }
               />
+              <div className="d-grid gap-2">
+                <Button variant="outline-primary" onClick={() => setEditing(false)}>Save</Button>
+              </div>
             </div>
           </div>
         ) : (
@@ -103,8 +104,8 @@ export const Card6Element = ({
 };
 Card6Element.craft = {
   props: {
-    title: "Heqadline",
+    title: "Headline",
     body: "This is a sample card body.",
-    button: "",
+    button: "Click Me",
   },
 };

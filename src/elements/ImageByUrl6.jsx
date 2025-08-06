@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNode } from "@craftjs/core";
-import Col from "react-bootstrap/Col";
+import { Col, Button } from "react-bootstrap";
 
 export const ImageByUrl6Element = ({ src }) => {
   const {
@@ -15,20 +15,25 @@ export const ImageByUrl6Element = ({ src }) => {
 
   return (
     <Col md={6}>
-      <div onClick={() => setEditing(true)} className="p-3 m-1">
+      <div onClick={() => !editing && setEditing(true)} className="p-3 m-1">
         {editing ? (
-          <input
-            className="form-control"
-            value={src}
-            onBlur={() => setEditing(false)}
-            onChange={(e) =>
-              actions.setProp((props) => {
-                props.src = e.target.value;
-              })
-            }
-          />
+          <>
+            <input
+              className="form-control"
+              value={src}
+              onClick={() => setEditing(true)}
+              onChange={(e) =>
+                actions.setProp((props) => {
+                  props.src = e.target.value;
+                })
+              }
+            />
+            <div className="d-grid gap-2">
+              <Button variant="outline-primary" onClick={() => setEditing(false)}>Save</Button>
+            </div>
+          </>
         ) : (
-          <img src={src} alt="User image" className="img-fluid" />
+          <img src={src} className="img-fluid" />
         )}
       </div>
     </Col>

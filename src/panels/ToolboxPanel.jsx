@@ -30,7 +30,7 @@ export const ToolboxPanel = () => {
         <div className="border border-dark rounded m-1 p-2 w-100 text-center user-select-none">
           <i className="bi-question-square"></i>{" "}
           <i className="bi bi-grip-vertical"></i>
-          <small>FAQ item</small>
+          <small>FAQ Item</small>
         </div>
       </div>
     </div>

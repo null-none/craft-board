@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useNode } from "@craftjs/core";
-import Col from "react-bootstrap/Col";
+import { Col, Button } from "react-bootstrap";
 
 import ParagraphElement from "./Paragraph";
 
@@ -30,14 +30,13 @@ export const Faq12Element = ({
       <div
         ref={(ref) => connect(drag(ref))}
         className="card p-3 m-1"
-        onClick={() => setEditing(true)}
+        onClick={() => !editing && setEditing(true)}
       >
         {editing ? (
           <div>
             <input
               className="form-control mb-2"
               value={title}
-              onBlur={() => setEditing(false)}
               onChange={(e) =>
                 actions.setProp((props) => {
                   props.title = e.target.value;
@@ -48,7 +47,7 @@ export const Faq12Element = ({
               className="form-control"
               value={body}
               ref={ref}
-              onBlur={() => setEditing(false)}
+              rows="8"
               style={{ overflow: "hidden", resize: "none" }}
               onChange={(e) =>
                 actions.setProp((props) => {
@@ -56,6 +55,9 @@ export const Faq12Element = ({
                 })
               }
             />
+            <div className="d-grid gap-2">
+              <Button variant="outline-primary" onClick={() => setEditing(false)}>Save</Button>
+            </div>
           </div>
         ) : (
           <>

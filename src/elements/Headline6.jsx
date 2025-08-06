@@ -28,7 +28,7 @@ export const Headline6Element = ({
   return (
     <Col md={6}>
       <div
-        ref={(ref) => connect(drag(ref))}
+        onBlur={() => setEditing(false)}
         className="p-3 m-1"
         onClick={() => setEditing(true)}
       >
@@ -37,7 +37,6 @@ export const Headline6Element = ({
             <input
               className="form-control mb-2"
               value={title}
-              onBlur={() => setEditing(false)}
               onChange={(e) =>
                 actions.setProp((props) => {
                   props.title = e.target.value;
@@ -48,7 +47,6 @@ export const Headline6Element = ({
               className="form-control"
               value={body}
               ref={ref}
-              onBlur={() => setEditing(false)}
               style={{ overflow: "hidden", resize: "none" }}
               onChange={(e) =>
                 actions.setProp((props) => {

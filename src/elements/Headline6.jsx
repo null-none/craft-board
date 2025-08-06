@@ -25,8 +25,6 @@ export const Headline6Element = ({
     }
   }, [body]);
 
-  console.log(editing);
-
   return (
     <Col md={6}>
       <div

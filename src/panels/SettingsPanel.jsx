@@ -22,6 +22,9 @@ export const SettingsPanel = () => {
     actions.delete(id);
   };
 
+  console.log(data, actions);
+
+
   return (
     <div className="pt-5">
       <Accordion defaultActiveKey={["0"]} alwaysOpen>

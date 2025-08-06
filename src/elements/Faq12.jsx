@@ -70,8 +70,9 @@ export const Faq12Element = ({
   );
 };
 Faq12Element.craft = {
+  displayName: "Faq12Element",
   props: {
-    title: "Heqadline",
+    title: "Headline",
     body: "This is a sample card body.",
   },
 };

@@ -103,6 +103,7 @@ export const Card6Element = ({
   );
 };
 Card6Element.craft = {
+  displayName: "Card6Element",
   props: {
     title: "Headline",
     body: "This is a sample card body.",

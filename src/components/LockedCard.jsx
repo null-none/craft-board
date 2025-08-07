@@ -17,6 +17,7 @@ LockedCard.craft = {
                 const name = node.data.displayName;
                 return name === "Card6Element";
             });
-        }
+        },
+        canDrop: () => false,
     }
 };

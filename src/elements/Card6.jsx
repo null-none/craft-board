@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { useNode } from "@craftjs/core";
+import { useNode, useEditor } from "@craftjs/core";
 import { Col, Button } from "react-bootstrap";
 
 import ParagraphElement from "./Paragraph";
@@ -11,13 +11,14 @@ export const Card6Element = ({
 }) => {
   const {
     connectors: { connect, drag },
-    actions,
+    actions: nodeActions,
     id,
   } = useNode((node) => ({
     props: node.data.props,
   }));
   const [editing, setEditing] = useState(false);
   const ref = useRef();
+  const { actions: editorActions } = useEditor();
 
   useEffect(() => {
     if (ref.current) {
@@ -40,7 +41,7 @@ export const Card6Element = ({
                 className="form-control mb-2"
                 value={title}
                 onChange={(e) =>
-                  actions.setProp((props) => {
+                  nodeActions.setProp((props) => {
                     props.title = e.target.value;
                   })
                 }
@@ -61,7 +62,7 @@ export const Card6Element = ({
                 rows="5"
                 style={{ overflow: "hidden", resize: "none" }}
                 onChange={(e) =>
-                  actions.setProp((props) => {
+                  nodeActions.setProp((props) => {
                     props.body = e.target.value;
                   })
                 }
@@ -70,13 +71,16 @@ export const Card6Element = ({
                 className="form-control mb-2"
                 value={button}
                 onChange={(e) =>
-                  actions.setProp((props) => {
+                  nodeActions.setProp((props) => {
                     props.button = e.target.value;
                   })
                 }
               />
               <div className="d-grid gap-2">
-                <Button variant="outline-primary" onClick={() => setEditing(false)}>Save</Button>
+                <Button variant="outline-primary" onClick={() => {
+                  setEditing(false);
+                  editorActions.selectNode();
+                }}>Save</Button>
               </div>
             </div>
           </div>

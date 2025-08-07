@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useNode } from "@craftjs/core";
+import { useNode, useEditor } from "@craftjs/core";
 import { Col, Button } from "react-bootstrap";
 
 export const ImageByUrl6Element = ({ src }) => {
   const {
     connectors: { connect, drag },
-    actions,
+    actions: nodeActions,
     id,
   } = useNode((node) => ({
     props: node.data.props,
@@ -29,7 +29,10 @@ export const ImageByUrl6Element = ({ src }) => {
               }
             />
             <div className="d-grid gap-2">
-              <Button variant="outline-primary" onClick={() => setEditing(false)}>Save</Button>
+              <Button variant="outline-primary" onClick={() => {
+                setEditing(false);
+                editorActions.selectNode();
+              }}>Save</Button>
             </div>
           </>
         ) : (

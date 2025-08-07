@@ -1,6 +1,5 @@
 import React from "react";
-import { Editor, Frame, Element } from "@craftjs/core";
-
+import { Editor, Frame, Element } from "@craftjs/core"; 
 import { ToolboxPanel } from "./panels/ToolboxPanel";
 import { ExportPanel } from "./panels/ExportPanel";
 import { UndoRedoPanel } from "./panels/UndoRedoPanel";
@@ -22,6 +21,7 @@ import { LockedFAQ } from "./components/LockedFAQ";
 import { Container, Row, Col } from "react-bootstrap";
 
 export default function App() {
+
   return (
     <Container fluid>
       <Editor
@@ -45,6 +45,9 @@ export default function App() {
               <Col>
                 <div className="d-flex flex-row bd-highlight justify-content-center">
                   <div className="p-2 bd-highlight">
+                    <ToolboxPanel />
+                  </div>
+                  <div className="p-2 bd-highlight">
                     <UndoRedoPanel />
                   </div>
                   <div className="p-2 bd-highlight">
@@ -55,10 +58,7 @@ export default function App() {
             </Row>
           </div>
           <Row className="wrapper pt-5">
-            <Col md={2} className="vh-100 p-3 border-end">
-              <ToolboxPanel />
-            </Col>
-            <Col md={8} className="p-4">
+            <Col md={10} className="p-4">
               <Frame>
                 <div className="row">
                   <Element is={Lockable} canvas>

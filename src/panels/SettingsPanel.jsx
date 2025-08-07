@@ -13,12 +13,8 @@ export const SettingsPanel = () => {
     return {};
   });
 
-  if (selected) {
-    const { id, data } = selected;
-    const props = data.props;
-  }
-
   const handleDelete = () => {
+    const { id, data } = selected;
     actions.delete(id);
   };
 

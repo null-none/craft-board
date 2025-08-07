@@ -15,7 +15,7 @@ export const ImageByUrl6Element = ({ src }) => {
 
   return (
     <Col md={6}>
-      <div onClick={() => !editing && setEditing(true)} className="p-3 m-1">
+      <div className="p-3 m-1">
         {editing ? (
           <>
             <input
@@ -36,7 +36,7 @@ export const ImageByUrl6Element = ({ src }) => {
             </div>
           </>
         ) : (
-          <img src={src} className="img-fluid" />
+          <img src={src} className="img-fluid btn btn-link"  data-bs-toggle="modal" data-bs-target="#filesModal" />
         )}
       </div>
     </Col>

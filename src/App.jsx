@@ -1,8 +1,9 @@
 import React from "react";
-import { Editor, Frame, Element } from "@craftjs/core"; 
+import { Editor, Frame, Element } from "@craftjs/core";
 import { ToolboxPanel } from "./panels/ToolboxPanel";
 import { ExportPanel } from "./panels/ExportPanel";
 import { UndoRedoPanel } from "./panels/UndoRedoPanel";
+import { FilesPanel } from "./panels/FilesPanel";
 
 import { SettingsPanel } from "./panels/SettingsPanel";
 import { ImageByUrl6Element } from "./elements/ImageByUrl6";
@@ -53,12 +54,15 @@ export default function App() {
                   <div className="p-2 bd-highlight">
                     <ExportPanel />
                   </div>
+                  <div className="p-2 bd-highlight">
+                    <SettingsPanel />
+                  </div>
                 </div>
               </Col>
             </Row>
           </div>
           <Row className="wrapper pt-5">
-            <Col md={10} className="p-4">
+            <Col md={12} className="p-4">
               <Frame>
                 <div className="row">
                   <Element is={Lockable} canvas>
@@ -103,12 +107,11 @@ export default function App() {
                 </div>
               </Frame>
             </Col>
-            <Col md={2} className="vh-100 p-3 border-start">
-              <SettingsPanel />
-            </Col>
           </Row>
         </>
       </Editor>
+      <div>dsadsa</div>
+      <FilesPanel />
     </Container>
   );
 }

@@ -11981,3 +11981,12 @@ th {
 .col-md-8 {
   background-color: #fff;
 }
+
+.file-item {
+  background-color: #fff;
+  transition: background-color 0.3s;
+}
+
+.file-item:hover {
+  background-color: #000;
+}

@@ -51,7 +51,7 @@ export const Card6Element = ({
               <img
                 src="https://placehold.co/600x400/EEE/31343C"
                 alt="Placeholder"
-                className="img-fluid mb-2"
+                className="img-fluid btn btn-link mb-2" data-bs-toggle="modal" data-bs-target="#filesModal"
               />
             </div>
             <div className="col-md-7 text-center text-md-start">

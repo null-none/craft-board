@@ -110,7 +110,6 @@ export default function App() {
           </Row>
         </>
       </Editor>
-      <div>dsadsa</div>
       <FilesPanel />
     </Container>
   );
